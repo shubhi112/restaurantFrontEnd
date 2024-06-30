@@ -1,0 +1,116 @@
+.auto-grid {
+    --auto-grid-min-size: 16rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+    grid-gap: 1rem;
+    padding-right: 20px;
+
+}
+
+
+.restaurant-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.p-card .p-card-content {
+    padding: 0 !important;
+}
+
+.restaurant-btn {
+    margin-bottom: 20px;
+}
+
+.left-text {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.right-text {
+    text-align: right;
+}
+
+.row>* {
+    padding: 0
+}
+
+.note-content {
+    margin: 15px 0px 15px 0px
+}
+
+.category {
+    margin-bottom: 20px
+}
+
+.search-bar {
+    width: 500px;
+}
+
+.iheart {
+    color: red;
+}
+
+.icon-edit {
+    color: rgb(44, 128, 237);
+    margin-right: 20px;
+}
+
+.icon-delete {
+    color: red;
+    margin-right: 20px
+}
+
+.icon-archive {
+    color: rgb(240, 169, 29);
+}
+
+.note-date {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+.rest-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rest-desc {
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.rest-time {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.rest-cuisine {
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.rest-location {
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 14px
+}
+
+.location-icon {
+    color: #179fc4;
+    margin-right: 5px
+}
+
+.view-btn {
+    color: #179fc4;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.card-res:hover {
+    box-shadow: 0 10px 10px rgba(98, 98, 98, 0.2) !important;
+}

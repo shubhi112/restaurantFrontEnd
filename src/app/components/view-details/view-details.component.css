@@ -1,0 +1,38 @@
+.view-card {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.menu-box {
+    padding-top: 30px !important;
+}
+
+.view-det {
+    box-shadow: 0 10px 10px rgba(98, 98, 98, 0.2) !important;
+}
+
+.rest-desc {
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+
+.rest-time {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.rest-cuisine {
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.rest-location {
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 14px
+}
+
+.location-icon {
+    color: #179fc4;
+    margin-right: 5px
+}

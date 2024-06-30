@@ -1,0 +1,29 @@
+<div class="card flex justify-content-center view-card">
+    <p-card class="view-det" header={{restaurant?.name}}>
+        <div class="rest-desc ">
+            {{restaurant?.desc}}
+        </div>
+        <div style="display:flex; margin-bottom:10px; justify-content: space-between;">
+            <p-badge value='{{restaurant?.ratings}} / 5' severity="warning">sdsi</p-badge>
+            <div class="rest-time">{{restaurant?.timeToDeliver}} mins</div>
+        </div>
+        <div style="display:flex; margin-bottom:10px; justify-content: space-between;">
+            <div class="rest-cuisine">{{restaurant?.cuisine}}</div>
+            <div class="rest-time">Delivery Fee: {{restaurant?.deliveryFee}} ₹ </div>
+        </div>
+
+        <div class="rest-location"><i class="fa-solid location-icon fa-location-dot"></i>{{restaurant?.location}}
+        </div>
+    </p-card>
+    <div class="menu-box">
+
+        <p-card header="Menu">
+            <div *ngFor="let menu of restaurant?.menu">
+                <h3>{{menu?.name}}</h3>
+                <p>{{menu?.desc}}</p>
+                <div>{{menu?.price}} ₹ </div>
+
+            </div>
+        </p-card>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group .p-inputtext {
+    width: 100%;
+}
+
+.cuisines-group,
+.menu-group {
+    margin-bottom: 20px;
+}
+
+.add-button {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.add-button p-button {
+    margin-top: 10px;
+}
+
+.form-layout {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.cuisine-style {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.menu-style {
+    margin-bottom: 20px;
+}
+
+.menu-items {
+    margin-bottom: 10px
+}
+
+.error {
+    color: red
+}
+
+.icon-delete {
+    color: red;
+    margin-left: 20px;
+}
+
+label {
+    font-weight: 600
+}

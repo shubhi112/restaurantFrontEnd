@@ -1,0 +1,53 @@
+<div class="restaurant-container">
+    <div>
+        <div class="restaurant-btn">
+            <button type="button" class="btn btn-style" (click)="goToCreate()">
+                Add New Restaurant</button>
+        </div>
+    </div>
+    <div class="auto-grid">
+        <div *ngFor="let restaurant of restaurants">
+            <p-card class="card-res">
+                <div class="container text-center">
+
+                    <div>
+                        <div class="rest-name">{{restaurant?.name}}</div>
+                        <div class="rest-desc" *ngIf="restaurant?.desc.length > 20; else elseBlock">
+                            {{restaurant?.desc.slice(0,
+                            20)}}...</div>
+                        <div>
+                            <ng-template #elseBlock> {{restaurant?.desc.slice(0, 20)}}</ng-template>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="display:flex; margin-bottom:10px; justify-content: space-between;">
+                    <p-badge value='{{restaurant?.ratings}} / 5' severity="warning">sdsi</p-badge>
+                    <div class="rest-time">{{restaurant?.timeToDeliver}} mins</div>
+                </div>
+
+                <div class="rest-cuisine">{{restaurant?.cuisine}}</div>
+                <div class="rest-location"><i
+                        class="fa-solid location-icon fa-location-dot"></i>{{restaurant?.location}}
+                </div>
+
+                <p-toast></p-toast>
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <button (click)="goToEdit(restaurant?._id)">
+                            <i class="icon-edit fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button (click)="deleteNote(restaurant?._id, $event)">
+                            <i class="icon-delete fa-solid fa-trash-can"></i>
+                        </button>
+                        <button class="view-btn" (click)="goToView(restaurant?._id)">View Details</button>
+                    </div>
+                    <div>
+                        <!-- <p class="note-date">{{restaurant?.updatedAt | date}} </p> -->
+                    </div>
+                </div>
+            </p-card>
+        </div>
+    </div>
+</div>

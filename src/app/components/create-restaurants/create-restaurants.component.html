@@ -1,0 +1,115 @@
+<div class="container">
+    <h2>Add Restaurant Details:</h2>
+    <p-toast></p-toast>
+    <form [formGroup]="restaurantForm" (ngSubmit)="onSave()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input pInputText id="name" formControlName="name">
+            <div class="error" *ngIf="restaurantForm.get('name')?.invalid && restaurantForm.get('name')?.touched">
+                Name is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="desc">Description:</label>
+            <input pInputText id="desc" formControlName="desc">
+            <div class="error" *ngIf="restaurantForm.get('desc')?.invalid && restaurantForm.get('desc')?.touched">
+                Description is required.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input pInputText id="location" formControlName="location">
+            <div class="error"
+                *ngIf="restaurantForm.get('location')?.invalid && restaurantForm.get('location')?.touched">
+                Location is required.
+            </div>
+        </div>
+        <div class="form-layout">
+            <div class="form-group">
+                <label for="ratings">Ratings:</label>
+                <input pInputText id="ratings" type="number" formControlName="ratings">
+                <div class="error"
+                    *ngIf="restaurantForm.get('ratings')?.invalid && restaurantForm.get('ratings')?.touched">
+                    Ratings should be between 0 and 5.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="timeToDeliver">Time to Deliver:</label>
+                <input pInputText id="timeToDeliver" formControlName="timeToDeliver">
+                <div class="error"
+                    *ngIf="restaurantForm.get('timeToDeliver')?.invalid && restaurantForm.get('timeToDeliver')?.touched">
+                    Time to Deliver is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="deliveryFee">Delivery Fee:</label>
+                <input pInputText id="deliveryFee" type="number" formControlName="deliveryFee">
+                <div class="error"
+                    *ngIf="restaurantForm.get('deliveryFee')?.invalid && restaurantForm.get('deliveryFee')?.touched">
+                    Delivery Fee is required.
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="cuisines-group">
+            <h3>Cuisines:</h3>
+            <button type="button" class="btn-style" (click)="addCuisine('')">Add Cuisine</button>
+            <div formArrayName="cuisine" class="cuisine-style">
+                <div *ngFor="let c of cuisine.controls; let i=index" class="menu-items">
+                    <input pInputText [formControlName]="i">
+                    <button type="button" (click)="removeCuisine(i)"> <i
+                            class="icon-delete fa-solid fa-trash-can"></i></button>
+                </div>
+            </div>
+
+
+            <button pButton type="button" label="Add Cuisine" (click)="addCuisine('')"></button>
+        </div>
+
+        <div class="menu-group">
+            <h3>Menu:</h3>
+            <button type="button" class="btn-style menu-style" (click)="addMenuItem()">Add Menu Item</button>
+            <div formArrayName="menu">
+                <div *ngFor="let item of menu.controls; let i=index" [formGroupName]="i" style="margin-bottom: 60px;">
+                    <div class="form-group">
+                        <label for="menu-name">Name:</label>
+                        <input pInputText id="menu-name" formControlName="name">
+                        <div class="error" *ngIf="item.get('name')?.invalid && item.get('name')?.touched">
+                            Name is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="menu-desc">Description:</label>
+                        <input pInputText id="menu-desc" formControlName="desc">
+                        <div class="error" *ngIf="item.get('desc')?.invalid && item.get('desc')?.touched">
+                            Description is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="menu-price">Price:</label>
+                        <input pInputText id="menu-price" type="number" formControlName="price">
+                        <div class="error" *ngIf="item.get('price')?.invalid && item.get('price')?.touched">
+                            Price is required.
+                        </div>
+                        <div style="float: right; margin-top:10px">
+                            <button type="button" (click)="removeMenuItem(i)">
+
+                                <i class="icon-delete fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <button pButton type="submit" class="btn-style" [disabled]="restaurantForm.invalid">Submit</button>
+    </form>
+</div>
